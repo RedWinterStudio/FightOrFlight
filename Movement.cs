@@ -24,7 +24,8 @@ public class Movement : MonoBehaviourPunCallbacks{
                 if (Input.GetKey(KeyCode.Escape))
                     Cursor.visible = false;
                     Cursor.lockState = CursorLockMode.Locked;
-            
+            yaw = Input.mousePosition.x * Time.DeltaTime;
+            pitch = Input.mousePosition.y * Time.DeltaTime;
             
             //this is where the code goes.
 }
