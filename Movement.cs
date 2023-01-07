@@ -16,6 +16,7 @@ public class Movement : MonoBehaviourPunCallbacks{
     }
     void update(){
         if (photonView.IsMine)
+            //cursor locking/unlocking
             if (Input.GetKey(KeyCode.Escape))
                 paused = true;
                 Cursor.visible = true;
@@ -24,8 +25,25 @@ public class Movement : MonoBehaviourPunCallbacks{
                 if (Input.GetKey(KeyCode.Escape))
                     Cursor.visible = false;
                     Cursor.lockState = CursorLockMode.Locked;
-            yaw = Input.mousePosition.x * Time.DeltaTime;
-            pitch = Input.mousePosition.y * Time.DeltaTime;
+            //inputs
+            if (Input.GetKey("A"))
+                yaw = yaw - (2 * Time.DeltaTime);
+            if (Input.GetKey("D"))
+                yaw = yaw + (2 * Time.DeltaTime);
+            if (Input.GetKey("S"))
+                pitch = pitch + (2 * Time.DeltaTime);
+            if (Input.GetKey("W"))
+                pitch = pitch - (2 * Time.DeltaTime);
+            if (Input.GetKey("Left"))
+                roll = roll - (2 * Time.DeltaTime);
+            if (Input.GetKey("Right"))
+                roll = roll + (2 * Time.DeltaTime);
+            //here is where it actually moves
+            transform.position = (3, 0, 0);
+            transform.localEulerAngles = (roll, yaw, pitch);
+            //done?
+            // p e r h a p s
+
             
             //this is where the code goes.
 }
