@@ -41,6 +41,11 @@ public class Movement : MonoBehaviourPunCallbacks{
             //here is where it actually moves
             transform.position = (3, 0, 0);
             transform.localEulerAngles = (roll, yaw, pitch);
+            //boolets
+            if (Input.GetKey("Up"))
+                //add staple instantieatio n
+            if  (Input.GetKey("Down"))
+                //Torpedo? Maybe?
             //done?
             // p e r h a p s
 
